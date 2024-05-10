@@ -21,6 +21,7 @@ class SignDetector(Node):
     def callback(self, img_msg):
         # Process image with CV Bridge
         image = self.bridge.imgmsg_to_cv2(img_msg, "bgr8")
+        stop_sign = self.detector.predict(image)
 
         #TODO: 
 
